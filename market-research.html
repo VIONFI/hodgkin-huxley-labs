@@ -31,6 +31,42 @@
     .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
     .pill-list li { font-size: 14px; color: var(--muted); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; margin: 0; }
     @media (max-width: 640px) { table.compare { font-size: 14px; } }
+    /* ---- Charts and animation ---- */
+    .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-top: 28px; }
+    .kpi { border: 1px solid var(--rule); border-radius: 10px; padding: 20px; opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+    .kpi.in { opacity: 1; transform: none; }
+    .kpi .n { font-size: 1.9rem; font-weight: 600; letter-spacing: -0.02em; margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
+    .kpi .l { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+    .kpi .s { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+    .chart-card { border: 1px solid var(--rule); border-radius: 10px; padding: 24px; margin-top: 24px; }
+    .chart-card h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 4px; }
+    .chart-card .sub { font-size: 13px; color: var(--muted); margin: 0 0 16px; }
+    .bar-row { display: grid; grid-template-columns: 180px 1fr 96px; gap: 12px; align-items: center; margin: 12px 0; font-size: 14px; }
+    .bar-row .lab { color: var(--ink); }
+    .bar-track { background: #f1f5f9; border-radius: 4px; height: 12px; overflow: hidden; }
+    .bar-fill { height: 100%; width: 0; background: var(--accent); border-radius: 4px; transition: width 1.4s cubic-bezier(.2,.7,.2,1); }
+    .bar-fill.alt { background: #334155; }
+    .bar-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .chart-card.in .bar-fill { width: var(--w); }
+    .line-path { stroke-dasharray: 1 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s ease; }
+    .chart-card.in .line-path { stroke-dashoffset: 0; }
+    .pt { opacity: 0; transition: opacity .6s ease 1.6s; }
+    .chart-card.in .pt { opacity: 1; }
+    .legend { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: var(--muted); margin-top: 8px; }
+    .legend span::before { content: ""; display: inline-block; width: 16px; height: 3px; margin-right: 8px; vertical-align: middle; background: var(--c); }
+    table.dom th, table.dom td { text-align: center; font-size: 14px; padding: 10px 6px; }
+    table.dom th:first-child, table.dom td:first-child { text-align: left; }
+    table.dom td.y { color: var(--accent); font-size: 18px; }
+    table.dom td.n { color: #cbd5e1; }
+    .demand-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 24px; }
+    .demand-cards div { border: 1px solid var(--rule); border-radius: 10px; padding: 20px; }
+    .demand-cards h4 { margin: 0 0 6px; font-size: 15px; font-weight: 600; }
+    .demand-cards p { margin: 0; color: var(--muted); font-size: 14px; }
+    @media (prefers-reduced-motion: reduce) {
+      .kpi, .bar-fill, .line-path, .pt { transition: none !important; opacity: 1 !important; transform: none !important; }
+      .chart-card.in .bar-fill { width: var(--w); }
+    }
+    @media (max-width: 640px) { .bar-row { grid-template-columns: 110px 1fr 80px; } }
   </style>
 </head>
 <body>
@@ -99,6 +135,129 @@
           <li>Manufacturing is the largest end-use sector, at about 18%, with healthcare and transport also listed.</li>
           <li>The five largest vendors held about 46% of the market between them: Apple (about 16.5%), Samsung (about 12%), NVIDIA (about 8.5%), Hikvision and Amazon.</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow">At a glance</div>
+        <h2>Key numbers, updated 7 November 2026.</h2>
+        <p>Each figure below is taken from the source named beside it. Numbers count up when this section comes into view.</p>
+        <div class="kpis">
+          <div class="kpi"><p class="n" data-count="57.7" data-decimals="1" data-suffix="%">0</p><p class="l">Horizon Robotics revenue growth, 2025</p><p class="s">Source [7]</p></div>
+          <div class="kpi"><p class="n" data-count="4.0" data-decimals="1" data-suffix="M">0</p><p class="l">Horizon Journey automotive chips shipped, 2025</p><p class="s">Source [7]</p></div>
+          <div class="kpi"><p class="n" data-count="500" data-decimals="0" data-suffix="+">0</p><p class="l">Axelera AI customers shipped to</p><p class="s">Source [5]</p></div>
+          <div class="kpi"><p class="n" data-count="450" data-decimals="0" data-prefix="~$" data-suffix="M">0</p><p class="l">Axelera AI total funding since 2021</p><p class="s">Source [5]</p></div>
+          <div class="kpi"><p class="n" data-count="17.8" data-decimals="1" data-suffix="%">0</p><p class="l">Forecast annual growth, 2026 to 2036</p><p class="s">Research and Markets [1]</p></div>
+          <div class="kpi"><p class="n" data-count="106" data-decimals="0" data-prefix="$" data-suffix="bn">0</p><p class="l">Forecast market size by 2036</p><p class="s">Research and Markets [1]</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow">Where it is used</div>
+        <h2>The domains where these chips are deployed.</h2>
+        <p>The table shows which of the profiled companies name each domain in their own public material. The market reports list the wider set of sectors and devices underneath.</p>
+
+        <div class="chart-card">
+          <h3>Domains named by profiled companies</h3>
+          <p class="sub">A tick means the company's published material names this domain. A dash means it does not in the sources reviewed.</p>
+          <div style="overflow-x:auto;">
+          <table class="compare dom" style="margin-top:8px;">
+            <thead>
+              <tr><th>Domain</th><th>Hailo</th><th>Axelera AI</th><th>BrainChip</th><th>Horizon Robotics</th><th>Arm</th><th>EDGX</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Automotive and transport</td><td class="y">&#10003;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="y">&#10003;</td><td class="n">&ndash;</td><td class="n">&ndash;</td></tr>
+              <tr><td>Industry and manufacturing</td><td class="n">&ndash;</td><td class="y">&#10003;</td><td class="y">&#10003;</td><td class="n">&ndash;</td><td class="y">&#10003;</td><td class="n">&ndash;</td></tr>
+              <tr><td>Robotics</td><td class="n">&ndash;</td><td class="y">&#10003;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td></tr>
+              <tr><td>Defence and security</td><td class="n">&ndash;</td><td class="y">&#10003;</td><td class="y">&#10003;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td></tr>
+              <tr><td>Smart cameras and surveillance</td><td class="y">&#10003;</td><td class="y">&#10003;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="y">&#10003;</td><td class="n">&ndash;</td></tr>
+              <tr><td>Consumer devices</td><td class="y">&#10003;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="y">&#10003;</td><td class="n">&ndash;</td></tr>
+              <tr><td>Space and satellites</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="y">&#10003;</td></tr>
+              <tr><td>Healthcare</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <p class="note">Sources: company profiles below and the numbered references. Healthcare appears in none of the profiled companies' material reviewed so far, so it is a gap in our research, not a finding. Robotics and drones are also named in the market reports [1][2].</p>
+        </div>
+
+        <div class="chart-card" data-bars='[{"l":"Manufacturing (largest end use)","v":18},{"l":"NPUs (largest processor type)","v":30},{"l":"Inference (share of AI processing)","v":65},{"l":"Top five vendors combined","v":46}]' data-max="70" data-unit="%">
+          <h3>Sector and device breakdown, 2025 (market level)</h3>
+          <p class="sub">Share of the global edge-AI market, as reported by Global Market Insights [2]. Smartphones are the largest device category; manufacturing is the largest end-use sector.</p>
+          <div class="bars"></div>
+          <p class="note">Other end uses listed: individual consumers, transport and logistics, healthcare, government, retail and BFSI. Other devices listed: cameras, wearables, robots, smart speakers, edge servers and drones [2].</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow">Company numbers</div>
+        <h2>Charts from the reported figures.</h2>
+        <p>Bars show the figures as reported. Where a value is calculated from reported numbers, the chart says so.</p>
+
+        <div class="chart-card" data-bars='[{"l":"Total revenue","v":3.76},{"l":"Products and solutions","v":1.62},{"l":"Licensing and services","v":1.94}]' data-max="4" data-unit=" bn" data-title="Horizon Robotics, 2025 revenue (RMB bn)">
+          <h3>Horizon Robotics, 2025 revenue (RMB bn)</h3>
+          <p class="sub">Products and solutions rose 144.2% and now make up 43% of revenue. Licensing and services rose 17.4% [7]. The two segments sum to 3.56, so about 0.20 is not broken out in the source.</p>
+          <div class="bars"></div>
+        </div>
+
+        <div class="chart-card" data-bars='[{"l":"Journey automotive chips","v":4.0},{"l":"Mid to high intelligent driving chips","v":1.8}]' data-max="4.5" data-unit=" m">
+          <h3>Horizon Robotics, chips shipped in 2025 (million units)</h3>
+          <p class="sub">Journey chips rose 39%. Mid to high intelligent driving chips were nearly five times the previous year and made up 48% of chip volume [7].</p>
+          <div class="bars"></div>
+        </div>
+
+        <div class="chart-card" data-bars='[{"l":"Axelera AI, recent round (more than)","v":250,"alt":0},{"l":"Hailo, Series C (2021)","v":136,"alt":1}]' data-max="260" data-unit=" m">
+          <h3>Largest disclosed funding rounds (USD m)</h3>
+          <p class="sub">Axelera's round is described as "more than $250 million" and its total funding since 2021 is about $450 million [5]. Hailo's 2021 round is shown for comparison [3]. The EDGX seed round (€2.3 million, August 2025) is too small to compare on this scale [9].</p>
+          <div class="bars"></div>
+        </div>
+
+        <div class="chart-card" data-bars='[{"l":"Revenue","v":1.22},{"l":"Operating expenses","v":13.65},{"l":"Net loss","v":12.02},{"l":"Cash at 30 June 2026","v":20.3}]' data-max="22" data-unit=" m" data-alt-all="1">
+          <h3>BrainChip, half-year to 30 June 2026 (USD m)</h3>
+          <p class="sub">Revenue rose 19%, while operating expenses rose about 33%. The net loss widened from US$9.36 million a year earlier [6].</p>
+          <div class="bars"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="demand">
+      <div class="wrap">
+        <div class="eyebrow">Expected future demand</div>
+        <h2>Where the market is expected to go.</h2>
+        <p>Both market reports expect strong growth through the 2030s. The lines below show each forecast from its reported 2025 starting point, using the reported growth rate. Dots mark the figures the reports actually published.</p>
+
+        <div class="chart-card" data-chart="growth">
+          <h3>Forecast market size, USD billion (2025 to 2036)</h3>
+          <p class="sub">Dots are reported figures. Lines are drawn from the reported growth rate (about 17.8% for Research and Markets, about 16% for Global Market Insights), so the curve passes close to, but not exactly through, each dot.</p>
+          <div id="growth-svg"></div>
+          <div class="legend">
+            <span style="--c:#0f766e">Research and Markets [1]</span>
+            <span style="--c:#334155">Global Market Insights [2]</span>
+          </div>
+        </div>
+
+        <div class="demand-cards">
+          <div>
+            <h4>Current demand signal</h4>
+            <p>Horizon Robotics shipped over 4 million automotive chips in 2025, up 39% [7]. Axelera says it has shipped to 500 customers [5].</p>
+          </div>
+          <div>
+            <h4>Main drivers named</h4>
+            <p>On-device generative AI in phones and PCs, automotive AI (driver assistance, automated driving, cockpits), physical AI in robotics and drones, and demand for privacy, low latency and lower cloud costs [1].</p>
+          </div>
+          <div>
+            <h4>Forecast growth</h4>
+            <p>Research and Markets forecasts 17.8% a year from 2026 to 2036, reaching USD 106 billion [1]. Global Market Insights forecasts about 16% a year to 2035 [2].</p>
+          </div>
+          <div>
+            <h4>Caveat</h4>
+            <p>The two reports start from different 2025 values, USD 16.8 billion and USD 26.0 billion, a gap of about 55%. Treat forecasts as ranges, not predictions.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -272,6 +431,107 @@
       <p style="margin:0;"><a href="https://www.linkedin.com/company/hodgkin-huxley/home/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      // Animated counters
+      function countUp(el) {
+        var target = parseFloat(el.dataset.count), dec = parseInt(el.dataset.decimals || '0', 10);
+        var pre = el.dataset.prefix || '', suf = el.dataset.suffix || '', dur = 1600, start = null;
+        function step(t) {
+          if (start === null) start = t;
+          var p = Math.min((t - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+          el.textContent = pre + (target * e).toFixed(dec) + suf;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      // Horizontal bar charts, built from data-bars JSON
+      function buildBars(card) {
+        var rows = JSON.parse(card.dataset.bars), max = parseFloat(card.dataset.max) || 1;
+        var unit = card.dataset.unit || '', host = card.querySelector('.bars') || card;
+        var allAlt = card.dataset.altAll === '1';
+        rows.forEach(function (r) {
+          var row = document.createElement('div');
+          row.className = 'bar-row';
+          var pct = Math.max(0, Math.min(100, (r.v / max) * 100));
+          var fillCls = (r.alt === 1 || allAlt) ? 'bar-fill alt' : 'bar-fill';
+          row.innerHTML = '<span class="lab"></span>' +
+            '<div class="bar-track"><div class="' + fillCls + '" style="--w:' + pct.toFixed(1) + '%"></div></div>' +
+            '<span class="bar-val"></span>';
+          row.querySelector('.lab').textContent = r.l;
+          row.querySelector('.bar-val').textContent = r.v + unit;
+          host.appendChild(row);
+        });
+      }
+
+      // Forecast line chart (SVG)
+      function buildGrowth(host) {
+        var W = 640, H = 300, pL = 48, pR = 16, pT = 16, pB = 36, x0 = 2025, x1 = 2036, vmax = 120;
+        function X(yr) { return pL + (yr - x0) / (x1 - x0) * (W - pL - pR); }
+        function Y(v) { return H - pB - (v / vmax) * (H - pT - pB); }
+        var series = [
+          { v0: 16.8, g: 0.178, end: 2036, col: '#0f766e', pts: [[2025, 16.8], [2026, 20.6], [2036, 106]], lab: 'USD 106bn' },
+          { v0: 26.0, g: 0.16, end: 2035, col: '#334155', pts: [[2025, 26.0], [2026, 31.2], [2035, 116.4]], lab: 'USD 116.4bn' }
+        ];
+        var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Forecast edge-AI market size, 2025 to 2036">';
+        for (var v = 0; v <= vmax; v += 20) {
+          svg += '<line x1="' + pL + '" x2="' + (W - pR) + '" y1="' + Y(v) + '" y2="' + Y(v) + '" stroke="#e5e7eb"/>';
+          svg += '<text x="' + (pL - 8) + '" y="' + (Y(v) + 4) + '" text-anchor="end" font-size="11" fill="#5b6472">' + v + '</text>';
+        }
+        for (var yr = x0; yr <= x1; yr++) {
+          if (yr % 2 === 0 || yr === x1) svg += '<text x="' + X(yr) + '" y="' + (H - 12) + '" text-anchor="middle" font-size="11" fill="#5b6472">' + yr + '</text>';
+        }
+        series.forEach(function (s) {
+          var d = '';
+          for (var t = x0; t <= s.end + 0.001; t += 0.25) {
+            var val = s.v0 * Math.pow(1 + s.g, t - x0);
+            d += (d ? ' L' : 'M') + X(t).toFixed(1) + ' ' + Y(val).toFixed(1);
+          }
+          svg += '<path class="line-path" pathLength="1" d="' + d + '" fill="none" stroke="' + s.col + '" stroke-width="2.5"/>';
+          s.pts.forEach(function (p) {
+            svg += '<circle class="pt" cx="' + X(p[0]) + '" cy="' + Y(p[1]) + '" r="5" fill="#fff" stroke="' + s.col + '" stroke-width="2.5"><title>' + p[0] + ': USD ' + p[1] + 'bn (reported)</title></circle>';
+          });
+          var last = s.pts[s.pts.length - 1];
+          svg += '<text class="pt" x="' + (X(last[0]) - 6) + '" y="' + (Y(last[1]) - 10) + '" text-anchor="end" font-size="12" font-weight="600" fill="' + s.col + '">' + s.lab + '</text>';
+        });
+        svg += '</svg>';
+        host.innerHTML = svg;
+      }
+
+      var done = new WeakSet();
+      function reveal(el) {
+        if (done.has(el)) return; done.add(el);
+        if (el.dataset.bars && !el.querySelector('.bar-row')) buildBars(el);
+        if (el.dataset.chart === 'growth') buildGrowth(el.querySelector('#growth-svg'));
+        requestAnimationFrame(function () { el.classList.add('in'); });
+      }
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            var el = e.target;
+            if (el.classList.contains('kpi')) {
+              el.classList.add('in');
+              var n = el.querySelector('[data-count]');
+              if (n) countUp(n);
+            } else {
+              reveal(el);
+            }
+            io.unobserve(el);
+          });
+        }, { threshold: 0.25 });
+        document.querySelectorAll('.kpi, .chart-card').forEach(function (el) { io.observe(el); });
+      } else {
+        document.querySelectorAll('.kpi, .chart-card').forEach(function (el) {
+          if (el.classList.contains('kpi')) { el.classList.add('in'); var n = el.querySelector('[data-count]'); if (n) n.textContent = n.dataset.count; }
+          else reveal(el);
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>
