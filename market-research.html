@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Market research | Hodgkin-Huxley Labs</title>
+  <meta name="description" content="Market research on companies building NPUs and edge-AI accelerators: what they do, what they have made public, and where the market is heading.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .co { border: 1px solid var(--rule); border-radius: 10px; padding: 28px; margin-top: 24px; }
+    .co h3 { font-size: 1.25rem; font-weight: 600; margin: 0 0 4px; }
+    .co .meta { font-size: 14px; color: var(--muted); margin: 0 0 14px; }
+    .co p { color: var(--muted); margin: 0 0 12px; }
+    .co ul { color: var(--muted); padding-left: 20px; margin: 0 0 12px; }
+    .co li { margin-bottom: 6px; }
+    .co .facts { font-size: 15px; }
+    .tag { display: inline-block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 999px; background: #f1f5f9; color: var(--muted); margin-right: 6px; }
+    table.compare { width: 100%; border-collapse: collapse; font-size: 15px; margin-top: 20px; }
+    table.compare th, table.compare td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    table.compare th { font-weight: 600; color: var(--ink); }
+    table.compare td { color: var(--muted); }
+    .note { font-size: 14px; color: var(--muted); margin-top: 12px; }
+    .refs { font-size: 14px; color: var(--muted); }
+    .refs li { margin-bottom: 8px; word-break: break-word; }
+    .refs a { color: var(--accent); }
+    .co a, .note a { color: var(--accent); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+    .pill-list li { font-size: 14px; color: var(--muted); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; margin: 0; }
+    @media (max-width: 640px) { table.compare { font-size: 14px; } }
+  </style>
+</head>
+<body>
+
+  <div class="bg-tech" aria-hidden="true"></div>
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="Hodgkin-Huxley Labs">
+      </a>
+      <nav>
+        <a href="index.html#why">Why we build</a>
+        <a href="index.html#applications">Applications</a>
+        <a href="market-research.html" aria-current="page">Market research</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="index.html#join" class="cta">Join us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="block" style="border-top:none; padding-top:64px;">
+      <div class="wrap">
+        <a class="back-link" href="index.html">&larr; Back to home</a>
+        <div class="eyebrow">Phase 1a: market research</div>
+        <h2 style="font-size:2.2rem;">Who builds NPUs and edge-AI accelerators, and where the market is going.</h2>
+        <p>This page profiles the companies working on neural processing units (NPUs) and edge-AI chips, what they have made public, and how the market is expected to grow. Every figure is linked to its source and dated. Where a company has not published a number, we say so rather than estimate it.</p>
+        <p class="note"><strong>Last updated:</strong> 7 November 2026. This page is refreshed on a regular schedule. Profiles marked "pending" are still being researched.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow">Market size</div>
+        <h2>The market is forecast to grow fast, but estimates differ.</h2>
+        <p>Two market reports published in 2026 give different starting points for the same market. Both expect strong growth, driven by automotive, robotics and on-device AI.</p>
+
+        <table class="compare">
+          <thead>
+            <tr><th>Source</th><th>Base year (2025)</th><th>Forecast</th><th>Growth rate</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Research and Markets, distributed by GlobeNewswire (27 Oct 2026) [1]</td>
+              <td>USD 16.80 billion (2026 estimate: USD 20.60 billion)</td>
+              <td>USD 106.00 billion by 2036</td>
+              <td>17.8% a year, 2026 to 2036</td>
+            </tr>
+            <tr>
+              <td>Global Market Insights [2]</td>
+              <td>About USD 26.0 billion</td>
+              <td>About USD 116.4 billion by 2035</td>
+              <td>About 16% a year, 2026 to 2035</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="note">Market size definitions differ between publishers, so the figures are not directly comparable. Both are shown here so you can judge for yourself.</p>
+
+        <p style="margin-top:28px;">Global Market Insights also reports the following for 2025 [2]:</p>
+        <ul class="refs" style="margin-top:8px;">
+          <li>NPUs are the largest category of processor, at about 30% of the market.</li>
+          <li>Inference, meaning running trained models, accounts for about 65% of AI processing.</li>
+          <li>Manufacturing is the largest end-use sector, at about 18%, with healthcare and transport also listed.</li>
+          <li>The five largest vendors held about 46% of the market between them: Apple (about 16.5%), Samsung (about 12%), NVIDIA (about 8.5%), Hikvision and Amazon.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow">Company profiles</div>
+        <h2>Companies profiled so far.</h2>
+        <p>Each profile lists what the company does and what it has made public. Figures are as reported, with the date and source.</p>
+
+        <!-- Hailo -->
+        <article class="co">
+          <span class="tag">Israel</span><span class="tag">Edge AI processors</span>
+          <h3>Hailo</h3>
+          <p class="meta">Edge AI processors for vehicles, consumer electronics and smart cameras</p>
+          <ul>
+            <li>Flagship Hailo-8 processor, which runs machine-learning workloads that previously needed large servers. Also sells M.2 and Mini PCIe acceleration modules [3].</li>
+            <li>Raised a $136 million Series C in October 2021, led by Poalim Equity and Gil Agmon. Valuation was not officially disclosed; unnamed sources put it at about $1.13 billion [3].</li>
+            <li>Had over 100 clients in late 2021, having doubled its customer base in the last two fiscal quarters of that year [3].</li>
+            <li>In April 2026, a report citing regulatory filings said Hailo was planning a merger with a SPAC (a blank-cheque listing vehicle) to list in the US. This was not a confirmed announcement. The same report links it to a "need for liquidity", noting about 10% of staff were laid off in January 2026 and a $9 million loan was taken out [4].</li>
+          </ul>
+          <p class="note">Lesson for us: even well-funded edge-AI chip companies can face financing pressure. The company's growth and cash position matter as much as the technology.</p>
+        </article>
+
+        <!-- Axelera -->
+        <article class="co">
+          <span class="tag">Europe</span><span class="tag">Edge AI processors</span>
+          <h3>Axelera AI</h3>
+          <p class="meta">High-performance edge AI for defence, industry, robotics and security</p>
+          <ul>
+            <li>Raised more than $250 million in a round led by Innovation Industries, with new investors BlackRock and SiteGround Capital. Total funding since 2021 is about $450 million [5].</li>
+            <li>The Europa AI processor was unveiled in October 2025. It reaches up to 629 TOPS at INT8 precision, a standard low-precision format for inference [5].</li>
+            <li>Developing a separate inference chiplet called Titania [5].</li>
+            <li>Says it has shipped to 500 customers across defence, industrial manufacturing, robotics and security [5].</li>
+          </ul>
+        </article>
+
+        <!-- BrainChip -->
+        <article class="co">
+          <span class="tag">Australia (ASX)</span><span class="tag">Neuromorphic</span>
+          <h3>BrainChip</h3>
+          <p class="meta">Neuromorphic processors (Akida) for low-power edge AI, plus IP licensing</p>
+          <ul>
+            <li>Half-year to 30 June 2026: revenue of US$1.22 million, up 19%. Net loss of US$12.02 million, wider than the US$9.36 million loss a year earlier. Operating expenses rose about 33% to US$13.65 million [6].</li>
+            <li>Cash position of US$20.3 million at 30 June 2026 [6].</li>
+            <li>Shipped its first production batch of 2,000 AKD1500 neuromorphic processors [6].</li>
+            <li>New IP licensing agreements with EDGEAI and ASICLAND could bring royalty revenue in future [6].</li>
+            <li>Next milestone: the AKD2500 chip is on track for a development milestone in late 2026 [6].</li>
+          </ul>
+        </article>
+
+        <!-- Horizon Robotics -->
+        <article class="co">
+          <span class="tag">China</span><span class="tag">Automotive AI</span>
+          <h3>Horizon Robotics</h3>
+          <p class="meta">AI chips and solutions for intelligent driving</p>
+          <ul>
+            <li>2025 revenue of RMB 3.76 billion, up 57.7% year on year. Gross margin was about 64.5% [7].</li>
+            <li>Products and solutions revenue rose 144.2% to RMB 1.62 billion, now 43% of total revenue [7].</li>
+            <li>Shipped over 4 million Journey-series automotive chips in 2025, up 39% [7].</li>
+            <li>Shipped 1.8 million mid- to high-level intelligent driving chips, nearly five times the previous year [7].</li>
+            <li>The company claims a 44.2% share of this segment in China's vehicles priced below RMB 200,000. This is the company's own claim, not an independent figure [7].</li>
+          </ul>
+        </article>
+
+        <!-- Arm -->
+        <article class="co">
+          <span class="tag">UK</span><span class="tag">IP licensing</span>
+          <h3>Arm</h3>
+          <p class="meta">Processor IP, including the Ethos-U85 NPU, licensed to chip makers</p>
+          <ul>
+            <li>Announced on 28 October 2025 an Armv9 edge-AI platform pairing the Cortex-A320 CPU with the Ethos-U85 NPU. The platform can run edge AI models with over 10 billion parameters [8].</li>
+            <li>Offered through its Flexible Access programme: customers get the IP, tools and resources upfront, at no or low cost, with reduced fees for qualified start-ups. Fees apply only to technology actually used in the final chip design [8].</li>
+            <li>Targets start-ups and large manufacturers of smart cameras, smart home, industrial automation and advanced interfaces [8].</li>
+          </ul>
+          <p class="note">Relevance for us: an NPU licensed as IP lowers the cost of entry for a small team. We will need to evaluate it against our own design.</p>
+        </article>
+
+        <!-- EDGX -->
+        <article class="co">
+          <span class="tag">Belgium (imec-backed)</span><span class="tag">Space</span>
+          <h3>EDGX</h3>
+          <p class="meta">AI computers that run in orbit, so satellites need less ground processing</p>
+          <ul>
+            <li>Raised a €2.3 million seed round, announced 11 August 2025, from imec.istart and the Flanders Future Tech Fund [9].</li>
+            <li>Its Sterna computer is built on NVIDIA hardware and runs AI workloads on the satellite. A companion software layer handles fault-tolerant operation and recovery from radiation effects [9].</li>
+            <li>Planned an in-orbit demonstration on a SpaceX Falcon 9 launch in February 2026. The source does not confirm whether it took place [9].</li>
+            <li>Has a €1.1 million contract with one unnamed satellite operator [9].</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow">Still to profile</div>
+        <h2>Companies named in the market reports, pending research.</h2>
+        <p>These companies are named in the two market reports [1][2] but do not yet have a profile on this page. Each will be researched in the same way.</p>
+
+        <p class="note" style="margin-top:20px;"><strong>Edge AI specialists</strong></p>
+        <ul class="pill-list">
+          <li>Ambarella</li><li>Synaptics</li><li>SiMa.ai</li><li>Blaize</li>
+        </ul>
+
+        <p class="note" style="margin-top:20px;"><strong>Mobile, PC and consumer chips</strong></p>
+        <ul class="pill-list">
+          <li>Qualcomm</li><li>Apple</li><li>MediaTek</li><li>Samsung Electronics</li><li>Google</li><li>Intel</li><li>AMD</li>
+        </ul>
+
+        <p class="note" style="margin-top:20px;"><strong>Automotive and robotics</strong></p>
+        <ul class="pill-list">
+          <li>NVIDIA</li><li>Mobileye</li>
+        </ul>
+
+        <p class="note" style="margin-top:20px;"><strong>Industrial, automotive and microcontroller makers</strong></p>
+        <ul class="pill-list">
+          <li>NXP</li><li>STMicroelectronics</li><li>Infineon</li><li>Renesas</li><li>Texas Instruments</li>
+        </ul>
+
+        <p class="note" style="margin-top:20px;"><strong>Chinese edge-AI chip makers</strong></p>
+        <ul class="pill-list">
+          <li>HiSilicon (Huawei)</li><li>Rockchip</li>
+        </ul>
+
+        <p class="note" style="margin-top:20px;"><strong>Space</strong></p>
+        <ul class="pill-list">
+          <li>NOVI</li><li>Sidus Space</li>
+        </ul>
+        <p class="note">Space profiles are a priority for the next research pass, because the satellite and on-board processing segment is closest to our target sectors.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow">Early observations</div>
+        <h2>What the research so far suggests.</h2>
+        <p>These are observations from the profiles above, not conclusions. They will be tested as more companies are added.</p>
+        <ul class="refs" style="margin-top:20px; font-size:16px;">
+          <li><strong>Automotive is growing quickly.</strong> Horizon Robotics' revenue rose 57.7% in 2025 [7], and the market report names automotive as a main driver [1].</li>
+          <li><strong>Funding and cash are tight for smaller companies.</strong> BrainChip has a loss-making half-year and US$20.3 million in cash [6]. Hailo's 2026 reports point to a need for liquidity [4].</li>
+          <li><strong>Large, well-funded European players now exist.</strong> Axelera has raised about $450 million in total [5].</li>
+          <li><strong>Licensing NPU designs is becoming easier.</strong> Arm's Flexible Access programme is aimed at start-ups [8], which lowers the barrier for teams like ours.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="eyebrow">Sources</div>
+        <h2>References.</h2>
+        <p class="note">Each source was retrieved on 7 November 2026. Figures are as reported by the source at that time.</p>
+        <ol class="refs" style="margin-top:20px; padding-left:20px;">
+          <li>Research and Markets, "Global Edge AI Chips Market Size, Share, Trends, and Industry Analysis, Forecast 2026-2036", GlobeNewswire, 27 October 2026. <a href="https://www.globenewswire.com/news-release/2026/10/27/3389461/28124/en/global-edge-ai-chips-market-size-share-trends-and-industry-analysis-forecast-2026-2036-generative-ai-automotive-and-robotics-fuel-a-usd-106-billion-opportunity.html" target="_blank" rel="noopener">link</a></li>
+          <li>Global Market Insights, "Edge AI Hardware Market Size, Forecasts Report 2026-2035". <a href="https://www.gminsights.com/industry-analysis/edge-ai-hardware-market" target="_blank" rel="noopener">link</a></li>
+          <li>Globes, "Israeli edge AI chipmaker Hailo raises $136m" (October 2021). <a href="https://en.globes.co.il/en/article-israeli-edge-ai-chipmaker-hailo-raises-136m-1001387010" target="_blank" rel="noopener">link</a></li>
+          <li>SiliconANGLE, report on Hailo and a SPAC merger, 3 April 2026. <a href="https://siliconangle.com/?p=737320" target="_blank" rel="noopener">link</a></li>
+          <li>Data Center Dynamics, "Axelera AI raises more than $250m to boost development of edge AI hardware". <a href="https://www.datacenterdynamics.com/en/news/axelera-ai-raises-more-than-250m-to-boost-development-of-edge-ai-hardware/" target="_blank" rel="noopener">link</a></li>
+          <li>Motley Fool Australia, "BrainChip shares: Half-year results show revenue up, loss widens", 26 August 2026. <a href="https://www.fool.com.au/2026/08/26/brainchip-shares-half-year-results-show-revenue-up-loss-widens/" target="_blank" rel="noopener">link</a></li>
+          <li>Gasgoo, "Horizon Robotics boasts 57.7% YoY surge in 2025 annual revenue". <a href="https://autonews.gasgoo.com/articles/icv/horizon-robotics-boasts-577-yoy-surge-in-2025-annual-revenue-2034605818467483649" target="_blank" rel="noopener">link</a></li>
+          <li>Mashdigi, "Arm Flexible Access licensing adds Armv9-based edge AI computing platform", 28 October 2025. <a href="https://en.mashdigi.com/arm-flexible-access-licensing-adds-armv9-based-edge-ai-computing-platform-to-lower-barriers-to-adoption-of-advanced-ai-technologies/" target="_blank" rel="noopener">link</a></li>
+          <li>Pulse 2.0, "EDGX: €2.3 Million Seed Raised To Develop AI-Based Edge Computers For Satellite Constellations", 11 August 2025. <a href="https://pulse2.com/edgx-e2-3-million-seed-raised-to-develop-ai-based-edge-computers-for-satellite-constellations/amp/" target="_blank" rel="noopener">link</a></li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p style="margin:0 0 8px;">&copy; Hodgkin-Huxley Labs. An independent initiative in early development.</p>
+      <p style="margin:0;"><a href="https://www.linkedin.com/company/hodgkin-huxley/home/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
