@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roadmap | Hodgkin-Huxley Labs</title>
+  <meta name="description" content="The project plan for Hodgkin-Huxley Labs: from market research to a prototype NPU accelerator for edge AI.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="bg-tech" aria-hidden="true"></div>
+
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="Hodgkin-Huxley Labs">
+      </a>
+      <nav>
+        <a href="index.html#why">Why we build</a>
+        <a href="index.html#applications">Applications</a>
+        <a href="roadmap.html" aria-current="page">Roadmap</a>
+        <a href="index.html#join" class="cta">Join us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="block" style="border-top:none; padding-top:64px;">
+      <div class="wrap">
+        <a class="back-link" href="index.html">&larr; Back to home</a>
+        <div class="eyebrow">Project plan</div>
+        <h2 style="font-size:2.2rem;">From research to a working NPU prototype.</h2>
+        <p>This roadmap sets out the phases of the initiative in order. Durations are indicative and will be refined once Phase 1 is complete. Each phase ends with a review that decides whether the next phase starts.</p>
+
+        <div class="phase">
+          <span class="status">In progress</span>
+          <h3>Phase 1: Foundations</h3>
+          <p>Understand the market and the current technology before designing anything.</p>
+          <ul>
+            <li><span class="label-small">1a. Market research.</span> Identify the pioneers in NPU and edge-AI hardware, what they build, the business information they have made public, and the expected growth of the market in space, automotive, healthcare and surveillance. Every figure is cited to its source, and the research is refreshed on a regular schedule.</li>
+            <li><span class="label-small">1b. State-of-the-art analysis of hardware design.</span> Survey current accelerators and their architectures, including compute arrays, memory hierarchy and bandwidth, support for low-precision and sparse computation, power per unit of performance, and toolchain maturity. Output: a comparison and a list of gaps that our design can target.</li>
+          </ul>
+        </div>
+
+        <div class="phase planned">
+          <span class="status">Planned</span>
+          <h3>Phase 2: Requirements and architecture</h3>
+          <p>Turn the research into a specification and a first architecture.</p>
+          <ul>
+            <li>Define target workloads for each sector and the performance, power, latency and precision each needs.</li>
+            <li>Identify sector constraints, such as radiation tolerance and temperature range for space, functional-safety requirements for automotive, and reliability and certification needs for healthcare and industry.</li>
+            <li>Choose the core architecture and list the intellectual-property (IP) blocks, such as the compute array, memory, interconnect and control logic.</li>
+          </ul>
+        </div>
+
+        <div class="phase planned">
+          <span class="status">Planned</span>
+          <h3>Phase 3: Prototype</h3>
+          <p>Build the design in hardware description code and test it on programmable hardware.</p>
+          <ul>
+            <li>Implement the core IP blocks, with simulation and verification at each step.</li>
+            <li>Run a prototype on a field-programmable gate array (FPGA) board.</li>
+            <li>Benchmark reference models, such as image and sensor-processing networks, against the targets set in Phase 2.</li>
+          </ul>
+        </div>
+
+        <div class="phase planned">
+          <span class="status">Planned</span>
+          <h3>Phase 4: Evaluation and product path</h3>
+          <p>Measure the design against the state of the art and decide how to take it to market.</p>
+          <ul>
+            <li>Compare the prototype with current accelerators on performance per watt, latency and cost.</li>
+            <li>Review the IP position and protect the core innovations.</li>
+            <li>Identify pilot partners in the target sectors and gather their feedback.</li>
+            <li>Plan a silicon run, for example through a shared multi-project wafer programme, with its cost and timeline.</li>
+          </ul>
+        </div>
+
+        <div class="phase planned">
+          <span class="status">Planned</span>
+          <h3>Phase 5: Company and funding</h3>
+          <p>Form the company and raise the funds needed to build the product.</p>
+          <ul>
+            <li>Set up the legal entity, governance and founding team.</li>
+            <li>Prepare the pitch, financial plan and funding ask based on the results of Phases 1 to 4.</li>
+            <li>Raise funds and begin the first product development programme.</li>
+          </ul>
+        </div>
+
+        <p style="margin-top:40px;">Throughout all phases, the community is kept informed through the website, our Discord community, and LinkedIn. Progress and spending are reported on the <a href="index.html#funding">home page</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p style="margin:0 0 8px;">&copy; Hodgkin-Huxley Labs. An independent initiative in early development.</p>
+      <p style="margin:0;"><a href="https://www.linkedin.com/company/hodgkin-huxley/home/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

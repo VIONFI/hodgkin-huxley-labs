@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Illustration: vehicle with radar and inference sensing">
+  <rect width="480" height="300" fill="#f8fafc"/>
+  <line x1="40" y1="232" x2="440" y2="232" stroke="#cbd5e1" stroke-width="2"/>
+  <path d="M120 200 L150 150 Q160 138 180 138 L300 138 Q320 138 332 152 L360 200 Z" fill="#ffffff" stroke="#111827" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M170 150 L190 124 L280 124 L300 150 Z" fill="#e2e8f0" stroke="#111827" stroke-width="2"/>
+  <circle cx="170" cy="202" r="22" fill="#111827"/><circle cx="170" cy="202" r="8" fill="#cbd5e1"/>
+  <circle cx="310" cy="202" r="22" fill="#111827"/><circle cx="310" cy="202" r="8" fill="#cbd5e1"/>
+  <g fill="none" stroke="#0f766e" stroke-width="2">
+    <path d="M368 170 a24 24 0 0 1 0 32"/>
+    <path d="M384 158 a40 40 0 0 1 0 56"/>
+    <path d="M400 146 a56 56 0 0 1 0 80"/>
+  </g>
+  <circle cx="360" cy="186" r="5" fill="#0f766e"/>
+  <g fill="#0f766e">
+    <circle cx="210" cy="90" r="4"/><circle cx="250" cy="70" r="4"/><circle cx="290" cy="92" r="4"/>
+  </g>
+  <g stroke="#0f766e" stroke-width="1.5" fill="none" opacity="0.7">
+    <line x1="210" y1="90" x2="250" y2="70"/><line x1="250" y1="70" x2="290" y2="92"/><line x1="210" y1="90" x2="290" y2="92"/>
+  </g>
+  <text x="240" y="282" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#5b6472">Automotive: low-latency perception</text>
+</svg>

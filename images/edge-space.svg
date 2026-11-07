@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Illustration: edge AI chip on a satellite in orbit">
+  <rect width="480" height="300" fill="#f8fafc"/>
+  <ellipse cx="240" cy="160" rx="200" ry="90" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <circle cx="240" cy="150" r="70" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+  <circle cx="60" cy="60" r="1.5" fill="#94a3b8"/><circle cx="410" cy="50" r="1.5" fill="#94a3b8"/>
+  <circle cx="90" cy="250" r="1.5" fill="#94a3b8"/><circle cx="430" cy="240" r="1.5" fill="#94a3b8"/>
+  <g transform="translate(240 150)">
+    <rect x="-18" y="-18" width="36" height="36" rx="4" fill="#111827"/>
+    <rect x="-9" y="-9" width="18" height="18" rx="2" fill="#0f766e"/>
+    <line x1="-18" y1="0" x2="-70" y2="0" stroke="#111827" stroke-width="3"/>
+    <rect x="-130" y="-30" width="60" height="60" fill="#ffffff" stroke="#111827" stroke-width="2.5"/>
+    <line x1="-100" y1="-30" x2="-100" y2="30" stroke="#111827" stroke-width="1.5"/>
+    <line x1="18" y1="0" x2="70" y2="0" stroke="#111827" stroke-width="3"/>
+    <rect x="70" y="-30" width="60" height="60" fill="#ffffff" stroke="#111827" stroke-width="2.5"/>
+    <line x1="100" y1="-30" x2="100" y2="30" stroke="#111827" stroke-width="1.5"/>
+  </g>
+  <path d="M320 70 l24 -10 l-6 22 z" fill="#0f766e" opacity="0.8"/>
+  <text x="240" y="282" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" fill="#5b6472">Edge AI in space</text>
+</svg>
