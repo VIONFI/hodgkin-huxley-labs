@@ -52,7 +52,7 @@ header.site .wrap {
   letter-spacing: 0.01em;
 }
 
-.brand img { width: 30px; height: 30px; }
+.brand img { height: 44px; width: auto; display: block; }
 
 nav a {
   color: var(--muted);
