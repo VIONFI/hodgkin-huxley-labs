@@ -9,6 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    // Apply saved or device theme before first paint (avoids a flash)
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('hh-theme'); } catch (e) {}
+      var t = saved || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
   <style>
     .co { border: 1px solid var(--rule); border-radius: 10px; padding: 28px; margin-top: 24px; }
@@ -67,6 +76,31 @@
       .chart-card.in .bar-fill { width: var(--w); }
     }
     @media (max-width: 640px) { .bar-row { grid-template-columns: 110px 1fr 80px; } }
+
+    /* ---- Theme ---- */
+    :root { --s1: #0f766e; --s2: #334155; }
+    [data-theme="dark"] {
+      --ink: #e5e7eb; --muted: #9ca3af; --accent: #2dd4bf; --bg: #0b1120; --rule: #1f2937;
+      --s1: #2dd4bf; --s2: #cbd5e1; color-scheme: dark;
+    }
+    [data-theme="dark"] header.site { background: rgba(11, 17, 32, 0.95); }
+    [data-theme="dark"] .brand img { background: #ffffff; border-radius: 8px; padding: 4px 8px; }
+    [data-theme="dark"] nav a.cta { color: #0b1120; }
+    [data-theme="dark"] .bar-track { background: #1f2937; }
+    [data-theme="dark"] .tag, [data-theme="dark"] .pill-list li { background: #111827; }
+    [data-theme="dark"] table.dom td.n { color: #374151; }
+    [data-theme="dark"] .bar-fill.alt { background: var(--s2); }
+    .bar-fill.alt { background: var(--s2); }
+    #growth-svg line { stroke: var(--rule); }
+    #growth-svg text { fill: var(--muted); }
+    #growth-svg text[font-weight="600"] { fill: var(--ink); }
+    #growth-svg path.line-path:nth-of-type(1) { stroke: var(--s1); }
+    #growth-svg path.line-path:nth-of-type(2) { stroke: var(--s2); }
+    #growth-svg circle { fill: var(--bg); }
+    #growth-svg circle:nth-of-type(-n+3) { stroke: var(--s1); }
+    #growth-svg circle:nth-of-type(n+4) { stroke: var(--s2); }
+    .theme-toggle { font: inherit; font-size: 14px; color: var(--muted); background: none; border: 1px solid var(--rule); border-radius: 6px; padding: 6px 12px; margin-left: 24px; cursor: pointer; }
+    .theme-toggle:hover { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -84,6 +118,7 @@
         <a href="market-research.html" aria-current="page">Market research</a>
         <a href="roadmap.html">Roadmap</a>
         <a href="index.html#join" class="cta">Join us</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark mode">Dark</button>
       </nav>
     </div>
   </header>
@@ -235,8 +270,8 @@
           <p class="sub">Dots are reported figures. Lines are drawn from the reported growth rate (about 17.8% for Research and Markets, about 16% for Global Market Insights), so the curve passes close to, but not exactly through, each dot.</p>
           <div id="growth-svg"></div>
           <div class="legend">
-            <span style="--c:#0f766e">Research and Markets [1]</span>
-            <span style="--c:#334155">Global Market Insights [2]</span>
+            <span style="--c:var(--s1)">Research and Markets [1]</span>
+            <span style="--c:var(--s2)">Global Market Insights [2]</span>
           </div>
         </div>
 
@@ -434,6 +469,20 @@
 
   <script>
     (function () {
+      // Theme toggle
+      var toggle = document.getElementById('theme-toggle');
+      function syncToggle() {
+        var t = document.documentElement.getAttribute('data-theme');
+        toggle.textContent = t === 'dark' ? 'Light' : 'Dark';
+      }
+      syncToggle();
+      toggle.addEventListener('click', function () {
+        var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('hh-theme', next); } catch (e) {}
+        syncToggle();
+      });
+
       // Animated counters
       function countUp(el) {
         var target = parseFloat(el.dataset.count), dec = parseInt(el.dataset.decimals || '0', 10);
