@@ -9,6 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    // Apply saved or device theme before first paint (avoids a flash)
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('hh-theme'); } catch (e) {}
+      var t = saved || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,6 +35,7 @@
         <a href="market-research.html">Market research</a>
         <a href="roadmap.html">Roadmap</a>
         <a href="#join" class="cta">Join us</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark mode">Dark</button>
       </nav>
     </div>
   </header>
@@ -202,6 +212,20 @@
     } else {
       items.forEach((el) => el.classList.add('in'));
     }
+  </script>
+
+  <script>
+    (function () {
+      var b = document.getElementById('theme-toggle');
+      function sync() { b.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? 'Light' : 'Dark'; }
+      sync();
+      b.addEventListener('click', function () {
+        var n = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', n);
+        try { localStorage.setItem('hh-theme', n); } catch (e) {}
+        sync();
+      });
+    })();
   </script>
 
 </body>

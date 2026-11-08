@@ -5,7 +5,49 @@
   --bg: #ffffff;
   --rule: #e5e7eb;
   --max: 1040px;
+  --s1: #0f766e;
+  --s2: #334155;
 }
+
+/* ---- Theme (light is default; dark follows the device or the saved choice) ---- */
+[data-theme="dark"] {
+  --ink: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #2dd4bf;
+  --bg: #0b1120;
+  --rule: #1f2937;
+  --s1: #2dd4bf;
+  --s2: #cbd5e1;
+  color-scheme: dark;
+}
+
+[data-theme="dark"] header.site { background: rgba(11, 17, 32, 0.95); }
+[data-theme="dark"] .brand img { background: #ffffff; border-radius: 8px; padding: 4px 8px; }
+[data-theme="dark"] nav a.cta { color: #0b1120; }
+[data-theme="dark"] .hero .actions a.primary { color: var(--bg); }
+[data-theme="dark"] form.join button { color: var(--bg); }
+[data-theme="dark"] form.join input,
+[data-theme="dark"] form.join select,
+[data-theme="dark"] form.join textarea { background: #111827; border-color: #374151; }
+[data-theme="dark"] .pending { border-color: #374151; }
+[data-theme="dark"] .phase .status { background: rgba(45, 212, 191, 0.12); }
+[data-theme="dark"] .phase.planned .status { background: #1f2937; color: var(--muted); }
+[data-theme="dark"] .bar-track { background: #1f2937; }
+[data-theme="dark"] .tag, [data-theme="dark"] .pill-list li { background: #111827; }
+[data-theme="dark"] table.dom td.n { color: #374151; }
+
+.theme-toggle {
+  font: inherit;
+  font-size: 14px;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-left: 24px;
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--ink); }
 
 * { box-sizing: border-box; }
 
